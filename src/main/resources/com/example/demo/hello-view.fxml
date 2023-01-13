@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import java.net.URL?>
+<VBox alignment="CENTER" prefHeight="665.0" prefWidth="1021.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.HelloController">
+    <stylesheets>
+        <URL value="@test.css"></URL>
+    </stylesheets>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+          <Label fx:id="welcomeText" prefHeight="17.0" prefWidth="230.0" text="Parça Takip sistemi" />
+   <Pane prefHeight="474.0" prefWidth="516.0">
+      <children>
+         <Button fx:id="getData" layoutX="83.0" layoutY="404.0" mnemonicParsing="false" onAction="#refreshButton" text="Yenile" />
+         <VBox fx:id="categoryVbox" layoutX="548.0" layoutY="62.0" prefHeight="336.0" prefWidth="311.0" />
+         <TableView fx:id="dataTablo" layoutX="14.0" layoutY="14.0" prefHeight="336.0" prefWidth="564.0">
+           <columns>
+               <TableColumn fx:id="colParcaId" prefWidth="98.39999008178711" text="ParcaId" />
+               <TableColumn fx:id="colName" minWidth="0.800018310546875" prefWidth="158.3999786376953" text="Name" />
+             <TableColumn fx:id="colUnitPrice" prefWidth="154.4000244140625" text="Unit Price" />
+               <TableColumn fx:id="colStok" minWidth="0.0" prefWidth="153.5999755859375" text="Stok" />
+           </columns>
+         </TableView>
+         <Label fx:id="resultLabel" layoutX="563.0" layoutY="416.0" prefHeight="48.0" prefWidth="274.0" />
+         <Pane layoutX="556.0" layoutY="14.0" prefHeight="37.0" prefWidth="246.0">
+            <children>
+               <ComboBox fx:id="Kategori" layoutX="103.0" layoutY="6.0" prefWidth="150.0" promptText="Seçiniz">
+                   <items>
+                       <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="Yeni" />
+                           <String fx:value="Düzenle" />
+                           <String fx:value="Çıkarma" />
+                       </FXCollections>
+                   </items>
+                  </ComboBox>
+               <Label layoutX="32.0" layoutY="10.0" text="Kategori" />
+            </children>
+         </Pane>
+      </children></Pane>
+
+</VBox>
